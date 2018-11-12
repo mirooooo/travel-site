@@ -2,7 +2,7 @@
      padding: 4.5rem 0;
 
      &--blue {
-         background-color: $mainBlublack;
+         background-color: $mainBlublack ;
          color: #FFF;
      }
  }
