@@ -1,2 +1,9 @@
+<<<<<<< HEAD
 node_modules
 .DS_STORE
+=======
+.DS_STORE
+ # Node.
+node_modules
+npm-debug.log
+>>>>>>> count-to-ten

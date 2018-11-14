@@ -1,19 +1,36 @@
 .wrapper {
+<<<<<<< HEAD
     overflow: hidden;
     padding-left: 18px;
     padding-right: 18px;
     max-width: 1236px;
     margin-left: auto;
     margin-right: auto;
+=======
+  overflow: hidden;
+  padding-left: 18px;
+  padding-right: 18px;
+  max-width: 1236px;
+  margin-left: auto;
+  margin-right: auto;
+>>>>>>> count-to-ten
 
-    &--medium {
-        max-width: 976px;
-    }
+  &--medium {
+    max-width: 976px;
+  }
 
-    .wrapper {
-        padding-left: 0;
-        padding-right: 0;
+  .wrapper {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  &--b-margin {
+    margin-bottom: 1rem;
+
+    @mixin atSmall {
+      margin-bottom: 3.875rem;
     }
+<<<<<<< HEAD
 
     &--b-margin {
         margin-bottom: 1rem;
@@ -22,5 +39,8 @@
             margin-bottom: 3.875rem;
         }
     }
+=======
+  }
+>>>>>>> count-to-ten
 
 }

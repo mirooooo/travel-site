@@ -21,7 +21,6 @@ gulp.task('watch', function() {
 
 });
 
-// gulp saparate task to check css files/ connected with browserSync
 gulp.task('cssInject', ['styles'], function() {
   return gulp.src('./app/temp/styles/styles.css')
     .pipe(browserSync.stream());
