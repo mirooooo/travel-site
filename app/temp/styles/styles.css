@@ -480,6 +480,7 @@ a {
   }
 
 .large-hero__text-content {
+    padding-top: 88px;
     position: absolute;
     top: 50%;
     -webkit-transform: translateY(-50%);
@@ -487,6 +488,13 @@ a {
     left: 0;
     width: 100%;
     text-align: center;
+  }
+
+@media (min-width: 800px) {
+
+.large-hero__text-content {
+      padding-top: 60px
+  }
   }
 
 .large-hero__title {
@@ -1090,21 +1098,76 @@ Instead edit gulp/templates/sprite */
 .side-header {
     padding: 10px 0;
     position: absolute;
-    z-index: 2;
-    background-color: rgba(47,85,114, .3);
     width: 100%;
+    z-index: 2;
 }
+
+@media (min-width: 800px) {
+
+.side-header {
+        background-color: rgba(47,85,114, .3)
+}
+  }
 
 .side-header__btn-container {
         float: right;
     }
 
 .side-header__logo {
-        top: 0;
         position: absolute;
+        top: 0;
+        /* transform logo to stay in the middle for small screens */
+        left: 50%;
+        -webkit-transform: translateX(-50%) scale(.8);
+                transform: translateX(-50%) scale(.8);
+        /* ======================================= */
+        -webkit-transform-origin: 50% 0;
+                transform-origin: 50% 0;
         background-color: #2f5572;
         padding: 25px 36px;
     }
+
+@media (min-width: 800px) {
+
+.side-header__logo {
+            /* for Medium and Large Undo these 2 properties */
+            left: auto;
+            -webkit-transform: translateX(0);
+                    transform: translateX(0)
+            /* ======================= */
+    }
+  }
+
+.side-header__logo__graphic {
+        text-indent: -9999px;
+    }
+
+.side-header__menu-icon {
+        width: 20px;
+        height: 20px;
+        background-color: #FFF;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+    }
+
+@media (min-width: 800px) {
+
+.side-header__menu-icon {
+            display: none
+    }
+  }
+
+.side-header__menu-content {
+        display: none;
+    }
+
+@media (min-width: 800px) {
+
+.side-header__menu-content {
+            display: block
+    }
+  }
 
 .primary-nav--pull-right {
         float: right;
