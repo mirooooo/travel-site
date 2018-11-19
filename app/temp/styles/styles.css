@@ -1100,12 +1100,16 @@ Instead edit gulp/templates/sprite */
     position: absolute;
     width: 100%;
     z-index: 2;
+
+
 }
 
 @media (min-width: 800px) {
 
 .side-header {
         background-color: rgba(47,85,114, .3)
+
+
 }
   }
 
@@ -1168,6 +1172,10 @@ Instead edit gulp/templates/sprite */
             display: block
     }
   }
+
+.side-header__menu-content--is-visible {
+            display: block;
+        }
 
 .primary-nav--pull-right {
         float: right;
