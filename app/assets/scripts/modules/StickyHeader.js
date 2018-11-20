@@ -4,6 +4,7 @@ import smoothScroll from 'jquery-smooth-scroll';
 
 class StickyHeader {
   constructor() {
+    this.lazyImages = $(".lazyload");
     this.siteHeader = $(".site-header");
     this.headerTriggerElement = $(".large-hero__title");
     this.createHeaderWaypoint();
@@ -11,7 +12,16 @@ class StickyHeader {
     this.headerLinks = $(".primary-nav a");
     this.createPageSectionWaypoints();
     this.addSmoothScrolling();
+    this.refreshWaypoints();
   }
+
+
+  refreshWaypoints() {
+    this.lazyImages.on('load', function () {
+      Waypoint.refreshAll();
+    });
+  }
+
 
   addSmoothScrolling() {
     this.headerLinks.smoothScroll();
@@ -21,7 +31,7 @@ class StickyHeader {
     var that = this;
     new Waypoint({
       element: this.headerTriggerElement[0],
-      handler: function(direction) {
+      handler: function (direction) {
         if (direction == "down") {
           that.siteHeader.addClass("site-header--dark");
         } else {
@@ -33,11 +43,11 @@ class StickyHeader {
 
   createPageSectionWaypoints() {
     var that = this;
-    this.pageSections.each(function() {
+    this.pageSections.each(function () {
       var currentPageSection = this;
       new Waypoint({
         element: currentPageSection,
-        handler: function(direction) {
+        handler: function (direction) {
           if (direction == "down") {
             var matchingHeaderLink = currentPageSection.getAttribute("data-matching-link");
             that.headerLinks.removeClass("is-current-link");
@@ -49,7 +59,7 @@ class StickyHeader {
 
       new Waypoint({
         element: currentPageSection,
-        handler: function(direction) {
+        handler: function (direction) {
           if (direction == "up") {
             var matchingHeaderLink = currentPageSection.getAttribute("data-matching-link");
             that.headerLinks.removeClass("is-current-link");
